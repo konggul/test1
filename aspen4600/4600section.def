@@ -1,0 +1,10 @@
+INPUT: 4600section.inm
+MODNAME: apmain
+RUNID: 4600section
+NEW_RUNID: 4600section
+OLD_RUNID: 4600section
+PDF: 4600section.appdf
+USERNAME: USER
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.8\Engine\xeq\apmain
+SPONLY:
+DBCONN: _1813vnc.ads

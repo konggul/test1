@@ -1,0 +1,594 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 781/221-6400                           EUROPE (44) 1189-226555
+
+ PLATFORM: WINDOWS                                       OCTOBER 11, 2018    
+ VERSION: 34.0   Build 109                               THURSDAY    
+ INSTALLATION:                                           8:19:45 P.M.        
+
+ THIS COPY OF ASPEN PLUS LICENSED TO LEGENDS 
+                       
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 20 CROSBY DRIVE,
+      BEDFORD, MA 01730.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           OCTOBER 11, 2018    
+   8:19:45 P.M.                           THURSDAY    
+   INPUT FILE: _1813vnc.inm
+   RUN ID : _1813vnc
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 34.0 at 20:19:42 Thu Oct 11, 2018
+          3    ;Directory C:\Users\USER\Desktop\gittest\aspen4600  Runid 4600SECTION
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET DENSITY='kg/cum' ENERGY=kcal ENTHALPY='cal/gm'  &
+         11            ENTROPY='kcal/kmol-K' ENTHALPY-FLO='kcal/hr' FORCE=Newton  &
+         12            MOLE-HEAT-CA='kcal/mol-K' HEAT-TRANS-C='kcal/hr-sqm-C'  &
+         13            PRESSURE=kPa TEMPERATURE=C VOLUME=cum DELTA-T=C  &
+         14            MASS-DENSITY='kg/cum' MOLE-ENTHALP='kcal/kmol'  &
+         15            MOLE-ENTROPY='kcal/kmol-K' MASS-ENTROPY='kcal/kg-K'  &
+         16            MOLE-VOLUME='cum/kmol' MASS-HEAT-CA='kcal/gm-K'  &
+         17            UA='kcal/hr-K' HEAT=kcal PDROP=kPa  &
+         18            VOL-HEAT-CAP='kcal/cum-K' HEAT-FLUX='kcal/hr-m'  &
+         19            INVERSE-PRES='1/kPa' VFLOW-LENGTH='sqm/hr'  &
+         20            INVERSE-HT-C='hr-sqm-K/kcal' VOL-ENTHALPY='kcal/cum'  &
+         21            MASS-VOLUME='cum/kg'
+         22
+         23    DEF-STREAMS CONVEN ALL
+         24
+         25    SIM-OPTIONS MASS-BAL-CHE=YES OLD-DATABANK=YES
+         26
+         27    MODEL-OPTION
+         28
+         29    DATABANKS PURE28  / AQUEOUS  / SOLIDS  / INORGANIC  /  &
+         30            NOASPENPCD
+         31
+         32    PROP-SOURCES PURE28  / AQUEOUS  / SOLIDS  / INORGANIC
+         33
+         34    COMPONENTS
+         35        MOH CH4O /
+         36        MAA C4H6O2-D5 /
+         37        S-MAA C4H6O2-D5 /
+         38        EG C2H6O2 /
+         39        H2O H2O
+         40
+         41    CISOLID-COMPS S-MAA
+         42
+         43    FORMULA S-MAA C4H6O2-D5
+         44
+         45    SOLVE
+         46        RUN-MODE MODE=SIM
+         47
+         48    CHEMISTRY C-1
+         49        PARAM
+         50        INERTS S-MAA
+         51
+         52    FLOWSHEET
+         53        BLOCK B1 IN=1-MCY 2-MOH OUT=S3
+         54        BLOCK C4700 IN=7 OUT=8
+         55        BLOCK B2 IN=S3 OUT=PURGE1 6 PURGE2
+         56        BLOCK E4610 IN=6 OUT=7
+         57        BLOCK B4 IN=8 PURGE1 OUT=9
+         58        BLOCK C4720 IN=9 OUT=S7
+         59        BLOCK B6 IN=S7 PURGE2 OUT=S9
+         60        BLOCK F4740A IN=S9 OUT=S12 S13
+         61        BLOCK KCP IN=S12 S17 OUT=S16 S18
+         62
+         63    PROPERTIES NRTL
+         64        PROPERTIES AMINES / APISOUR / B-PITZER / BK10 / BWR-LS /
+         65            BWRS / CHAO-SEA / COSMOSAC / ELECNRTL / ENRTL-HF /
+         66            ENRTL-RK / PENG-ROB / POLYFH / PSRK / RK-ASPEN /
+         67            SOLIDS / SR-POLAR / SRK / SRKKD / UNIFAC / VANLAAR /
+         68            WILS-HOC / WILSON
+         69
+         70    ESTIMATE ALL
+         71        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         72            INVERSE-PRES='1/bar'
+         73        NRTL ALL ALL UNIFAC
+         74
+         75    PROP-DATA NRTL-1
+         76        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         77            INVERSE-PRES='1/bar'
+         78        PROP-LIST NRTL
+         79        BPVAL MOH EG 33.32980000 -10000.00000 .3000000000 0.0 0.0  &
+         80            0.0 40.00000000 199.0000000
+         81        BPVAL EG MOH .1753000000 -322.9240000 .3000000000 0.0 0.0  &
+         82            0.0 40.00000000 199.0000000
+         83        BPVAL MOH H2O -.6930000000 172.9871000 .3000000000 0.0 0.0  &
+         84            0.0 24.99000000 100.0000000
+         85        BPVAL H2O MOH 2.732200000 -617.2687000 .3000000000 0.0 0.0  &
+         86            0.0 24.99000000 100.0000000
+         87        BPVAL MAA H2O .7133000000 -171.9931000 .5600000000 0.0 0.0  &
+         88            0.0 19.50000000 136.2000000
+         89        BPVAL H2O MAA 2.224400000 288.8474000 .5600000000 0.0 0.0  &
+         90            0.0 19.50000000 136.2000000
+         91        BPVAL EG H2O -.0567000000 -147.1373000 .3000000000 0.0 0.0  &
+         92            0.0 30.40000000 196.7000000
+         93        BPVAL H2O EG .3479000000 34.82340000 .3000000000 0.0 0.0  &
+         94            0.0 30.40000000 196.7000000
+         95        BPVAL MOH MAA 0.0 -446.4048000 .3000000000 0.0 0.0 0.0  &
+         96            25.00000000 25.00000000
+         97        BPVAL MAA MOH 0.0 756.3086120 .3000000000 0.0 0.0 0.0  &
+         98            25.00000000 25.00000000
+         99        BPVAL MOH S-MAA 0.0 -446.4048000 .3000000000 0.0 0.0 0.0  &
+        100            25.00000000 25.00000000
+        101        BPVAL S-MAA MOH 0.0 756.3086120 .3000000000 0.0 0.0 0.0  &
+        102            25.00000000 25.00000000
+        103        BPVAL MAA S-MAA 0.0 128.8337420 .3000000000 0.0 0.0 0.0  &
+        104            25.00000000 25.00000000
+        105        BPVAL S-MAA MAA 0.0 -114.7813690 .3000000000 0.0 0.0 0.0  &
+        106            25.00000000 25.00000000
+        107        BPVAL MAA EG 0.0 243.2434810 .3000000000 0.0 0.0 0.0  &
+        108            25.00000000 25.00000000
+        109        BPVAL EG MAA 0.0 -306.6035600 .3000000000 0.0 0.0 0.0  &
+        110            25.00000000 25.00000000
+        111        BPVAL S-MAA EG 0.0 243.2434810 .3000000000 0.0 0.0 0.0  &
+        112            25.00000000 25.00000000
+        113        BPVAL EG S-MAA 0.0 -306.6035600 .3000000000 0.0 0.0 0.0  &
+        114            25.00000000 25.00000000
+        115        BPVAL S-MAA H2O 0.0 -126.4104820 .3000000000 0.0 0.0 0.0  &
+        116            25.00000000 25.00000000
+        117        BPVAL H2O S-MAA 0.0 1022.051390 .3000000000 0.0 0.0 0.0  &
+        118            25.00000000 25.00000000
+        119
+        120    PROP-DATA PRKBV-1
+        121        IN-UNITS MET DENSITY='kg/cum' ENERGY=kcal ENTHALPY='cal/gm'  &
+        122            ENTROPY='kcal/kmol-K' ENTHALPY-FLO='kcal/hr' FORCE=Newton  &
+        123            MOLE-HEAT-CA='kcal/mol-K' HEAT-TRANS-C='kcal/hr-sqm-C'  &
+        124            PRESSURE=kPa TEMPERATURE=C VOLUME=cum DELTA-T=C  &
+        125            MASS-DENSITY='kg/cum' MOLE-ENTHALP='kcal/kmol'  &
+        126            MOLE-ENTROPY='kcal/kmol-K' MASS-ENTROPY='kcal/kg-K'  &
+        127            MOLE-VOLUME='cum/kmol' MASS-HEAT-CA='kcal/gm-K'  &
+        128            UA='kcal/hr-K' HEAT=kcal PDROP=kPa  &
+        129            VOL-HEAT-CAP='kcal/cum-K' HEAT-FLUX='kcal/hr-m'  &
+        130            INVERSE-PRES='1/kPa' VFLOW-LENGTH='sqm/hr'  &
+        131            INVERSE-HT-C='hr-sqm-K/kcal' VOL-ENTHALPY='kcal/cum'  &
+        132            MASS-VOLUME='cum/kg'
+        133        PROP-LIST PRKBV
+        134        BPVAL MOH H2O -.0778000000 0.0 0.0 -273.1500000  &
+        135            726.8500000
+        136        BPVAL H2O MOH -.0778000000 0.0 0.0 -273.1500000  &
+        137            726.8500000
+        138
+        139    PROP-DATA WILSON-1
+        140        IN-UNITS MET DENSITY='kg/cum' ENERGY=kcal ENTHALPY='cal/gm'  &
+        141            ENTROPY='kcal/kmol-K' ENTHALPY-FLO='kcal/hr' FORCE=Newton  &
+        142            MOLE-HEAT-CA='kcal/mol-K' HEAT-TRANS-C='kcal/hr-sqm-C'  &
+        143            PRESSURE=kPa TEMPERATURE=C VOLUME=cum DELTA-T=C  &
+        144            MASS-DENSITY='kg/cum' MOLE-ENTHALP='kcal/kmol'  &
+        145            MOLE-ENTROPY='kcal/kmol-K' MASS-ENTROPY='kcal/kg-K'  &
+        146            MOLE-VOLUME='cum/kmol' MASS-HEAT-CA='kcal/gm-K'  &
+        147            UA='kcal/hr-K' HEAT=kcal PDROP=kPa  &
+        148            VOL-HEAT-CAP='kcal/cum-K' HEAT-FLUX='kcal/hr-m'  &
+        149            INVERSE-PRES='1/kPa' VFLOW-LENGTH='sqm/hr'  &
+        150            INVERSE-HT-C='hr-sqm-K/kcal' VOL-ENTHALPY='kcal/cum'  &
+        151            MASS-VOLUME='cum/kg'
+        152        PROP-LIST WILSON
+        153        BPVAL MOH EG 4.123300000 -1316.707000 0.0 0.0 40.00000000  &
+        154            199.0000000 0.0
+        155        BPVAL EG MOH -32.06860000 10000.00000 0.0 0.0 40.00000000  &
+        156            199.0000000 0.0
+        157        BPVAL MOH H2O -2.030200000 448.6788000 0.0 0.0 24.99000000  &
+        158            100.0000000 0.0
+        159        BPVAL H2O MOH .0490000000 -21.97440000 0.0 0.0 24.99000000  &
+        160            100.0000000 0.0
+        161        BPVAL MAA H2O -37.66240000 -5000.000000 0.0 0.0  &
+        162            19.50000000 136.2000000 0.0
+        163        BPVAL H2O MAA -.1807000000 133.8850000 0.0 0.0 19.50000000  &
+        164            136.2000000 0.0
+        165        BPVAL S-MAA H2O -37.66240000 -5000.000000 0.0 0.0  &
+        166            19.50000000 136.2000000 0.0
+        167        BPVAL H2O S-MAA -.1807000000 133.8850000 0.0 0.0  &
+        168            19.50000000 136.2000000 0.0
+        169        BPVAL EG H2O -.3672000000 -15.04650000 0.0 0.0 30.40000000  &
+        170            196.7000000 0.0
+        171        BPVAL H2O EG .0606000000 125.4549000 0.0 0.0 30.40000000  &
+        172            196.7000000 0.0
+        173
+        174    STREAM 1-MCY
+        175        SUBSTREAM MIXED TEMP=38. PRES=100.0000000
+        176        MASS-FLOW MAA 3460.
+        177
+        178    STREAM 2-MOH
+        179        SUBSTREAM MIXED TEMP=37. PRES=100.0000000
+        180        MASS-FLOW MOH 120.
+        181
+        182    STREAM S17
+        183        SUBSTREAM MIXED TEMP=40. PRES=100. MASS-FLOW=300.
+        184        MASS-FRAC MAA 1.
+        185
+        186    BLOCK B1 MIXER
+        187        PARAM
+        188
+        189    BLOCK B4 MIXER
+        190        PARAM
+        191
+        192    BLOCK B6 MIXER
+        193        PARAM
+        194
+        195    BLOCK B2 FSPLIT
+        196        MASS-FLOW PURGE1 230. / PURGE2 100.
+        197
+        198    BLOCK F4740A SEP
+        199        PARAM
+        200        FRAC STREAM=S12 SUBSTREAM=MIXED COMPS=MOH S-MAA FRACS=1.  &
+        201            1.
+        202
+        203    BLOCK E4610 HEATER
+        204        PARAM TEMP=11. PRES=0. DPPARMOPT=NO
+        205
+        206    BLOCK KCP SWASH
+        207        PARAM LS-RATIO=0.
+        208
+        209    BLOCK C4700 CRYSTALLIZER
+        210        PARAM VOL=2.5 OPT-PSD=COPY OPT-PSD=COPY TEMP=7.2 PRES=0.  &
+        211            SOL-BASIS=SOLUTION SOL-METHOD=SOLUBILITY
+        212        STOIC 1 MIXED MAA -1. / S-MAA 1.
+        213        SOLU-PROFILE SOLUB-TEMP=7.2 SOLUB-RATIO=0.96
+        214
+        215    BLOCK C4720 CRYSTALLIZER
+        216        PARAM OPT-PSD=COPY TEMP=5.2 PRES=100. SOLVENT-CID=MAA  &
+        217            SOL-BASIS=SOLVENT SOL-METHOD=SOLUBILITY
+        218        STOIC 1 MIXED MAA -1. / S-MAA 1.
+        219        SOLU-PROFILE SOLUB-TEMP=7.2 SOLUB-CONCEN=1350. /  &
+        220            SOLUB-TEMP=5.2 SOLUB-CONCEN=2450.
+        221
+        222    EO-CONV-OPTI
+        223
+        224    STREAM-REPOR MOLEFLOW MASSFLOW MOLEFRAC MASSFRAC
+        225
+        226    PROPERTY-REP PCES NOPARAM-PLUS
+        227    ;
+        228    ;
+        229    ;
+        230    ;
+        231    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+
+      INFORMATION                                              (ESBPLD.1)       
+      BINARY PARAMETERS HOCETA (DATA SET 1) FOR MODEL ESHOC                     
+      ARE RETRIEVED FROM SDF TABLE.  TABLE NAME = ESHOC                         
+
+      INFORMATION                                              (ESBPLD.1)       
+      BINARY PARAMETERS PRKIJ (DATA SET 1) FOR MODEL ESPRSTD                    
+      ARE RETRIEVED FROM SDF TABLE.  TABLE NAME = ESPRSTD                       
+
+      INFORMATION                                              (ESPRLD.2)       
+      PURE COMPONENT PARAMETERS FOR SOME COMPONENTS ARE RETRIEVED FROM          
+      SDF TABLE.  THESE PARAMETERS ARE USED WITH THE ELECNRTL OPTION SET        
+      UNLESS YOU ENTER YOUR OWN PARAMETERS IN PROP-DATA PARAGRAPHS              
+      PARAMETERS RETRIEVED FOR COMPONENT H2O ARE:                               
+         VLBROC  PLXANT                                                         
+  
+ 
+ 
+
+ PDF updated                                                                      TIME =     12.02
+
+  *   WARNING IN PHYSICAL PROPERTY SYSTEM WHILE INITIALIZING PROPERTY MODELS    
+                                                               (GM05BB.1)       
+      UNSYMMETRIC ELECTROLYTE NRTL MODEL GMENRTLQ HAS MISSING PARAMETERS:       
+      Dielectric constant (CPDIEC) MISSING FOR MAA      & OTHER COMPONENTS.     
+      CPDIEC OF WATER WILL BE ASSUMED.                                          
+
+
+ THE FOLLOWING PURE COMPONENT PARAMETERS ARE ESTIMATED FOR MODEL ESRKU:
+
+
+ COMPONENT MOH     
+      POLAR PARAMETER RKUPP0 =     0.162227
+                      RKUPP1 =    -1.430134
+                      RKUPP2 =     0.008900
+
+ COMPONENT MAA     
+      POLAR PARAMETER RKUPP0 =    -0.199205
+                      RKUPP1 =    -0.550209
+                      RKUPP2 =    -1.252428
+
+ COMPONENT S-MAA   
+      POLAR PARAMETER RKUPP0 =    -0.199205
+                      RKUPP1 =    -0.550209
+                      RKUPP2 =    -1.252428
+
+ COMPONENT EG      
+      POLAR PARAMETER RKUPP0 =     0.008528
+                      RKUPP1 =   -22.898492
+                      RKUPP2 =    30.370908
+
+ COMPONENT H2O     
+      POLAR PARAMETER RKUPP0 =     0.070935
+                      RKUPP1 =    -0.758043
+                      RKUPP2 =    -0.971701
+
+ THE FOLLOWING BINARY-INTERACTION PARAMETERS ARE ESTIMATED FOR MODEL ESRKU:
+
+
+ BINARY MOH      - MAA     
+      RKUKA0 =    0.126509E-01
+      RKUKA2 =    -8.53279    
+      RKULA0 =   -0.360633E-01
+      RKULA2 =     7.49120    
+
+      FOR     298.15 (K) <= T <=    318.15 (K)
+
+
+ BINARY MOH      - S-MAA   
+      RKUKA0 =    0.126509E-01
+      RKUKA2 =    -8.53279    
+      RKULA0 =   -0.360633E-01
+      RKULA2 =     7.49120    
+
+      FOR     298.15 (K) <= T <=    318.15 (K)
+
+
+ BINARY MOH      - EG      
+      RKUKA0 =   -0.167356E-01
+      RKUKA2 =     4.38100    
+      RKULA0 =   -0.101167E-01
+      RKULA2 =     1.37069    
+
+      FOR     298.15 (K) <= T <=    318.15 (K)
+
+
+ BINARY MOH      - H2O     
+      RKUKA0 =   -0.503530E-01
+      RKUKA2 =    -10.8392    
+      RKULA0 =    0.214777E-01
+      RKULA2 =    -4.93979    
+
+      FOR     298.15 (K) <= T <=    318.15 (K)
+
+
+ BINARY MAA      - S-MAA   
+
+      INTERACTION PARAMETERS NOT PREDICTED BECAUSE UNIFAC GENERATES VERY LOW OR HIGH PRESSURE DATA
+
+ BINARY MAA      - EG      
+
+      INTERACTION PARAMETERS NOT PREDICTED BECAUSE UNIFAC GENERATES VERY LOW OR HIGH PRESSURE DATA
+
+ BINARY MAA      - H2O     
+      RKUKA0 =    0.656092E-03
+      RKUKA2 =    -40.7221    
+      RKULA0 =    0.689325E-01
+      RKULA2 =    -15.3718    
+
+      FOR     298.15 (K) <= T <=    318.15 (K)
+
+
+ BINARY S-MAA    - EG      
+
+      INTERACTION PARAMETERS NOT PREDICTED BECAUSE UNIFAC GENERATES VERY LOW OR HIGH PRESSURE DATA
+
+ BINARY S-MAA    - H2O     
+      RKUKA0 =    0.656092E-03
+      RKUKA2 =    -40.7221    
+      RKULA0 =    0.689325E-01
+      RKULA2 =    -15.3718    
+
+      FOR     298.15 (K) <= T <=    318.15 (K)
+
+
+ BINARY EG       - H2O     
+      RKUKA0 =   -0.296395E-01
+      RKUKA2 =    -10.4081    
+      RKULA0 =   -0.257297E-03
+      RKULA2 =   -0.199475    
+
+      FOR     298.15 (K) <= T <=    318.15 (K)
+
+
+  *   WARNING IN PHYSICAL PROPERTY SYSTEM                      (GM03I.1)        
+      ABSOLUTE VALUE OF LN(Aij) IS EXCEPTIONALLY LARGE FOR DATASET   1          
+      COMPONENTS MAA AND H2O IN THE WILSON MODEL.                               
+      THIS MAY CAUSE COMPUTATIONAL DIFFICULTIES.                                
+
+  *   WARNING IN PHYSICAL PROPERTY SYSTEM                      (GM03I.2)        
+      ABSOLUTE VALUE OF LN(Aij) IS EXCEPTIONALLY LARGE FOR DATASET   1          
+      COMPONENTS MAA AND H2O IN THE WILSON MODEL.                               
+      THIS MAY CAUSE COMPUTATIONAL DIFFICULTIES.                                
+
+  *   WARNING IN PHYSICAL PROPERTY SYSTEM                      (GM03I.1)        
+      ABSOLUTE VALUE OF LN(Aij) IS EXCEPTIONALLY LARGE FOR DATASET   1          
+      COMPONENTS S-MAA AND H2O IN THE WILSON MODEL.                             
+      THIS MAY CAUSE COMPUTATIONAL DIFFICULTIES.                                
+
+  *   WARNING IN PHYSICAL PROPERTY SYSTEM                      (GM03I.2)        
+      ABSOLUTE VALUE OF LN(Aij) IS EXCEPTIONALLY LARGE FOR DATASET   1          
+      COMPONENTS S-MAA AND H2O IN THE WILSON MODEL.                             
+      THIS MAY CAUSE COMPUTATIONAL DIFFICULTIES.                                
+
+  *   WARNING IN PHYSICAL PROPERTY SYSTEM                      (GM03I.2)        
+      ABSOLUTE VALUE OF LN(Aij) IS EXCEPTIONALLY LARGE FOR DATASET   1          
+      COMPONENTS EG AND MOH IN THE WILSON MODEL.                                
+      THIS MAY CAUSE COMPUTATIONAL DIFFICULTIES.                                
+
+ *** CALCULATION TRACE ***
+
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   2-MOH      ----       B1             1-MCY      ----       B1      
+   S17        ----       KCP            S3         B1         B2      
+   8          C4700      B4             PURGE1     B2         B4      
+   6          B2         E4610          PURGE2     B2         B6      
+   7          E4610      C4700          9          B4         C4720   
+   S7         C4720      B6             S9         B6         F4740A  
+   S12        F4740A     KCP            S13        F4740A     ----    
+   S16        KCP        ----           S18        KCP        ----    
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           1-MCY 2-MOH                    S3                          
+   C4700        7                              8                           
+   B2           S3                             PURGE1 6 PURGE2             
+   E4610        6                              7                           
+   B4           8 PURGE1                       9                           
+   C4720        9                              S7                          
+   B6           S7 PURGE2                      S9                          
+   F4740A       S9                             S12 S13                     
+   KCP          S12 S17                        S16 S18                     
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      B1 B2 E4610 C4700 B4 C4720 B6 F4740A KCP 
+
+Calculations begin                                                              time      0.28
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.28
+
+      ENTHALPY CALCULATION FOR INLET STREAM 1-MCY OF BLOCK B1                     TIME =      0.28
+      KODE = 2  NTRIAL =   1  T = 311.1500  P =  100000.      V =  0.00000      Q =  0.00000    
+
+      ENTHALPY CALCULATION FOR INLET STREAM 2-MOH OF BLOCK B1                     TIME =      0.28
+      KODE = 2  NTRIAL =   1  T = 310.1500  P =  100000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: MIXER                                             TIME =      0.28
+      NO. TEMP ITER =    6     TEMP =  312.107    
+      KODE = 1  NTRIAL =   2  T = 312.1075  P =  100000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK B2       MODEL: FSPLIT                                            TIME =      0.28
+      SPLIT FRACTIONS:  0.64246D-01    0.90782D+00    0.27933D-01
+
+      UOS BLOCK E4610    MODEL: HEATER                                            TIME =      0.28
+      KODE = 2  NTRIAL =   2  T = 284.1500  P =  100000.      V =  0.00000      Q = -65294.1    
+
+      UOS BLOCK C4700    MODEL: CRYSTALLIZER                                      TIME =      0.30
+
+      SPEC = TP    TEMP =   280.35      PRES =  0.10000E+06  DUTY =  0.68830E+06
+      CRYSTAL PROD RATE =  0.14626      RECYCLED FLOW RATE =   0.0000    
+      VENT FLOW =    0.0000      MAGMA DEN =   168.09      RES TIME =   2873.1    
+
+      UOS BLOCK B4       MODEL: MIXER                                             TIME =      0.30
+      NO. TEMP ITER =    6     TEMP =  282.420    
+      KODE = 1  NTRIAL =   2  T = 282.4198  P =  100000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK C4720    MODEL: CRYSTALLIZER                                      TIME =      0.30
+
+      SPEC = TP    TEMP =   278.35      PRES =  0.10000E+06  DUTY =  0.14752E+07
+      CRYSTAL PROD RATE =  0.45748      RECYCLED FLOW RATE =   0.0000    
+      VENT FLOW =    0.0000      MAGMA DEN =   508.37      RES TIME =   0.0000    
+
+      UOS BLOCK B6       MODEL: MIXER                                             TIME =      0.30
+      NO. TEMP ITER =    5     TEMP =  279.408    
+      KODE = 1  NTRIAL =   2  T = 279.4079  P =  100000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK F4740A   MODEL: SEP                                               TIME =      0.30
+      ---FLASH OUTLET STREAM S12     :
+      KODE = 2  NTRIAL =   1  T = 279.4079  P =  100000.      V =  0.00000      Q =  0.00000    
+      ---FLASH OUTLET STREAM S13     :
+      KODE = 2  NTRIAL =   1  T = 279.4079  P =  100000.      V =  0.00000      Q =  0.00000    
+
+      ENTHALPY CALCULATION FOR INLET STREAM S17 OF BLOCK KCP                      TIME =      0.30
+      KODE = 2  NTRIAL =   1  T = 313.1500  P =  100000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK KCP      MODEL: SWASH                                             TIME =      0.30
+      MIXING EFFICIENCY =     1.00      BYPASS FRACTION =     0.00    
+
+      GENERATING RESULTS FOR UOS BLOCK E4610    MODEL: HEATER                     TIME =      0.30
+      STREAM S16 WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 2   NO. TEMP ITER =    1     TEMP =  287.248    
+      KPHASE =    3 KODE =    2 T =  287.248     P =  100000.     Q =  0.00000    
+      STREAM S18 WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 2   NO. TEMP ITER =    1     TEMP =  287.248    
+      KPHASE =    2 KODE =    2 T =  287.248     P =  100000.     Q =  0.00000    
+
+ Report Writer entered                                                            Time =     15.74
+      STREAM S16 WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 2   NO. TEMP ITER =    1     TEMP =  287.248    
+      KPHASE =    3 KODE =    2 T =  287.248     P =  100000.     Q =  0.00000    
+      STREAM S18 WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 2   NO. TEMP ITER =    1     TEMP =  287.248    
+      KPHASE =    2 KODE =    2 T =  287.248     P =  100000.     Q =  0.00000    
+
+ Results generated                                                                Time =     15.83
+
+ Report Writer entered                                                            Time =     15.99
+      STREAM S16 WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 2   NO. TEMP ITER =    1     TEMP =  287.248    
+      KPHASE =    3 KODE =    2 T =  287.248     P =  100000.     Q =  0.00000    
+      STREAM S18 WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 2   NO. TEMP ITER =    1     TEMP =  287.248    
+      KPHASE =    2 KODE =    2 T =  287.248     P =  100000.     Q =  0.00000    
+
+ Results generated                                                                Time =     16.08
+
+RUN SAVED
+
+
+
+ *** SUMMARY OF ERRORS ***
+
+                  PHYSICAL
+                  PROPERTY  SYSTEM  SIMULATION
+ TERMINAL ERRORS      0        0         0
+   SEVERE ERRORS      0        0         0
+          ERRORS      0        0         0
+        WARNINGS      6        0         0
